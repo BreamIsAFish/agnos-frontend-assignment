@@ -74,6 +74,12 @@
   box-shadow: 3px 3px 10px gray;
 }
 
+.image-stomach {
+  position: absolute;
+  height: 60vh;
+  top: 13vh;
+}
+
 .title {
   font-size: x-large;
   font-weight: bold;

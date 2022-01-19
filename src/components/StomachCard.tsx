@@ -1,9 +1,8 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import StomachButtons from "./StomachButtons"
 
 import StomachImageRenderer from "./StomachImageRenderer"
 
-// import { DEFAULT_ST } from "../constants/images"
 export type Section =
   | "none"
   | "center"
@@ -18,11 +17,15 @@ export type Section =
 const StomachCard: FC = () => {
   const [selecting, setSelecting] = useState<Section>("none") // Selecting section
 
+  useEffect(() => {
+    console.log(selecting)
+  }, [selecting])
+
   return (
     <div className="card">
       <p className="title">คุณรู้สึกปวดท้องบริเวณใดมากที่สุด ?</p>
-      <StomachImageRenderer status={"default"} />
-      <StomachButtons setSelecting={setSelecting} />
+      <StomachImageRenderer selecting={selecting} />
+      <StomachButtons selecting={selecting} setSelecting={setSelecting} />
     </div>
   )
 }

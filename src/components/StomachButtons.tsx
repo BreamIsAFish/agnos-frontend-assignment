@@ -3,15 +3,19 @@ import React, { FC } from "react"
 import { Section } from "./StomachCard"
 
 interface StomachButtonsProps {
+  selecting: Section
   setSelecting: (section: Section) => void
 }
 
-const StomachButtons: FC<StomachButtonsProps> = ({ setSelecting }) => {
-  // const selectSection = (section: number) => {
-  //   // section 0 is center, 1 is top, 2 is top-right, 3 is bottom-right and so on.
-  //   console.log("pressed! " + section.toString())
-
-  // }
+const StomachButtons: FC<StomachButtonsProps> = ({
+  selecting,
+  setSelecting,
+}) => {
+  const selectSection = (section: Section) => {
+    // console.log("pressed! " + section.toString())
+    if (selecting !== section) setSelecting(section)
+    else setSelecting("none")
+  }
 
   return (
     <div>
@@ -19,44 +23,43 @@ const StomachButtons: FC<StomachButtonsProps> = ({ setSelecting }) => {
       <button
         className="button-stomach"
         style={{ top: "42vh", left: "48vw" }}
-        onClick={() => setSelecting("center")}
-        // onClick={() => selectSection(0)}
+        onClick={() => selectSection("center")}
       />
       {/* Top Button  */}
       <button
         className="button-stomach"
         style={{ top: "35vh", left: "48vw" }}
-        onClick={() => setSelecting("top")}
+        onClick={() => selectSection("top")}
       />
       {/* Top-right Button */}
       <button
         className="button-stomach"
         style={{ top: "39vh", left: "51vw" }}
-        onClick={() => setSelecting("top-right")}
+        onClick={() => selectSection("top-right")}
       />
       {/* Bottom-right Button */}
       <button
         className="button-stomach"
         style={{ top: "46vh", left: "51vw" }}
-        onClick={() => setSelecting("bottom-right")}
+        onClick={() => selectSection("bottom-right")}
       />
       {/* Bottom Button */}
       <button
         className="button-stomach"
         style={{ top: "49vh", left: "48vw" }}
-        onClick={() => setSelecting("bottom")}
+        onClick={() => selectSection("bottom")}
       />
       {/* Bottom-left Button */}
       <button
         className="button-stomach"
         style={{ top: "46vh", left: "45vw" }}
-        onClick={() => setSelecting("bottom-left")}
+        onClick={() => selectSection("bottom-left")}
       />
       {/* Top-left Button */}
       <button
         className="button-stomach"
         style={{ top: "39vh", left: "45vw" }}
-        onClick={() => setSelecting("top-left")}
+        onClick={() => selectSection("top-left")}
       />
     </div>
   )
