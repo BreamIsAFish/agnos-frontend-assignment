@@ -6,7 +6,6 @@ const StomachQuestionPage: FC = () => {
   return (
     <>
       {/* <div style={{ textAlign: "center" }}> */}
-      <p>stomach</p>
       <StomachCard />
       <button className="button">ต่อไป</button>
       {/* </div> */}

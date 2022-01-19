@@ -1,11 +1,14 @@
 import React, { FC } from "react"
 
-import { DEFAULT } from "../constants/images"
+import StomachImageRenderer from "./StomachImageRenderer"
+
+// import { DEFAULT_ST } from "../constants/images"
 
 const StomachCard: FC = () => {
   return (
     <div className="card">
-      <img src={DEFAULT} width={500} />
+      <p className="title">คุณรู้สึกปวดบริเวณใดมากที่สุด ?</p>
+      <StomachImageRenderer status={"default"} />
     </div>
   )
 }
