@@ -7,7 +7,14 @@ const StomachQuestionPage: FC = () => {
     <>
       {/* <div style={{ textAlign: "center" }}> */}
       <StomachCard />
-      <button className="button">ต่อไป</button>
+      <button
+        className="button"
+        onClick={() => {
+          console.log("eiei")
+        }}
+      >
+        ต่อไป
+      </button>
       {/* </div> */}
     </>
   )
