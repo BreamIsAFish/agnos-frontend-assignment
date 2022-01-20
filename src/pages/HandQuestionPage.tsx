@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom"
 
 import HandCard from "../components/HandCard"
 
-const HandQuestionPage = () => {
+const HandQuestionPage: FC = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const navigate = useNavigate()
 
   const goNextQuestion = () => {
-    // navigate to next question only if user answered the first question //
+    // submit the result only if user answered the second question //
     if (selected) {
       navigate("/thankyou")
     }
