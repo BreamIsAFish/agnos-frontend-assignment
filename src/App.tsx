@@ -1,9 +1,10 @@
 import React from "react"
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
-// import logo from "./logo.svg"
 import "./App.css"
 
+import HandQuestionPage from "./pages/HandQuestionPage"
 import StomachQuestionPage from "./pages/StomachQuestionPage"
+import ThankYouPage from "./pages/ThankYouPage"
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/firstQuestion" element={<StomachQuestionPage />} />
-          <Route path="/secondQuestion" element={<></>} />
+          <Route path="/secondQuestion" element={<HandQuestionPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/*" element={<Navigate to="/firstQuestion" />} />
         </Routes>
       </BrowserRouter>
