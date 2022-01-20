@@ -52,11 +52,13 @@
 }
 
 .button-stomach {
-  width: 3vw;
+  width: auto;
   height: 5.5vh;
+  aspect-ratio: 1;
   position: absolute;
-  /* border-radius: 50%; */
   border-color: transparent;
+  /* border-color: red; */
+  /* aspect-ratio: 1; */
   background-color: transparent;
 }
 
