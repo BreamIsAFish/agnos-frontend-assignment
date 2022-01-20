@@ -1,21 +1,32 @@
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 import StomachCard from "../components/StomachCard"
 
 const StomachQuestionPage: FC = () => {
+  const [selected, setSelected] = useState<boolean>(false)
+  const navigate = useNavigate()
+
+  const goNextQuestion = () => {
+    // navigate to next question only if user answered the first question //
+    if (selected) {
+      navigate("/secondQuestion")
+    }
+  }
+
   return (
     <>
-      {/* <div style={{ textAlign: "center" }}> */}
-      <StomachCard />
+      <StomachCard setSelected={setSelected} />
       <button
         className="button"
-        onClick={() => {
-          console.log("eiei")
+        style={{
+          backgroundColor: selected ? "cornflowerblue" : "rgb(172, 172, 172)",
+          color: selected ? "white" : "gray",
         }}
+        onClick={goNextQuestion}
       >
         ต่อไป
       </button>
-      {/* </div> */}
     </>
   )
 }

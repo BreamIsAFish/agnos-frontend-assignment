@@ -43,7 +43,7 @@
 .button {
   font-size: x-large;
   font-weight: bold;
-  color: rgb(172, 172, 172);
+  /* color: rgb(172, 172, 172); */
   width: 30vw;
   padding-top: 1%;
   padding-bottom: 1%;

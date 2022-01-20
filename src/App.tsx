@@ -1,5 +1,6 @@
 import React from "react"
-import logo from "./logo.svg"
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom"
+// import logo from "./logo.svg"
 import "./App.css"
 
 import StomachQuestionPage from "./pages/StomachQuestionPage"
@@ -7,6 +8,13 @@ import StomachQuestionPage from "./pages/StomachQuestionPage"
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/firstQuestion" element={<StomachQuestionPage />} />
+          <Route path="/secondQuestion" element={<></>} />
+          <Route path="/*" element={<Navigate to="/firstQuestion" />} />
+        </Routes>
+      </BrowserRouter>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,7 +29,6 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <StomachQuestionPage />
     </div>
   )
 }

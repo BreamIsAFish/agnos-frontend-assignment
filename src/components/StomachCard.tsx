@@ -14,11 +14,17 @@ export type Section =
   | "top-left"
   | "all"
 
-const StomachCard: FC = () => {
+interface StomachCardProps {
+  setSelected: (selected: boolean) => void
+}
+
+const StomachCard: FC<StomachCardProps> = ({ setSelected }) => {
   const [selecting, setSelecting] = useState<Section>("none") // Selecting section
 
   useEffect(() => {
-    console.log(selecting)
+    // console.log(selecting)
+    if (selecting !== "none") setSelected(true)
+    else setSelected(false)
   }, [selecting])
 
   return (
