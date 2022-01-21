@@ -25,8 +25,8 @@ I deployed this project using Static Server
 
 First I install serve by running the command:
 
-### npm install -g serve
+### `npm install -g serve`
 
 To start the web, run the following command:
 
-### serve -s build
+### `serve -s build`
