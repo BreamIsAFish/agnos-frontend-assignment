@@ -57,8 +57,16 @@
   aspect-ratio: 1;
   position: absolute;
   border-color: transparent;
-  /* border-color: red; */
-  /* aspect-ratio: 1; */
+  background-color: transparent;
+}
+
+.button-hand {
+  width: auto;
+  height: 4vh;
+  aspect-ratio: 1.4;
+  position: absolute;
+  /* border-color: transparent; */
+  border-color: red;
   background-color: transparent;
 }
 

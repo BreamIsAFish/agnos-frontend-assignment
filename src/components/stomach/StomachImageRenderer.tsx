@@ -19,7 +19,7 @@ import {
   BOTTOM_ST_LABEL,
   BOTTOM_LEFT_ST_LABEL,
   TOP_LEFT_ST_LABEL,
-} from "../constants/images"
+} from "../../constants/images"
 
 interface StomachImageRendererProp {
   selecting: Section

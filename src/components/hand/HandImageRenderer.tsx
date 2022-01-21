@@ -11,7 +11,7 @@ import {
   MIDDLE_HN_LABEL,
   TIP_HN,
   TIP_HN_LABEL,
-} from "../constants/images"
+} from "../../constants/images"
 
 interface HandImageRendererProp {
   selecting: HandSection

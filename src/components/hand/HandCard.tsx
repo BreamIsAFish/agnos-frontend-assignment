@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect } from "react"
 
 import HandImageRenderer from "./HandImageRenderer"
+import HandButtons from "./HandButtons"
+import BaseButton from "./BaseButton"
 
 export type HandSection = "none" | "base" | "middle" | "tip" | "all"
 
@@ -21,7 +23,7 @@ const HandCard: FC<HandCardProps> = ({ setSelected }) => {
     <div className="card">
       <p className="title">จุดไหนที่คุณปวดนิ้วมากที่สุด ?</p>
       <HandImageRenderer selecting={selecting} />
-      {/* <HandButtons selecting={selecting} setSelecting={setSelecting} /> */}
+      <HandButtons selecting={selecting} setSelecting={setSelecting} />
     </div>
   )
 }
