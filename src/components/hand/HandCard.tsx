@@ -2,7 +2,6 @@ import React, { FC, useState, useEffect } from "react"
 
 import HandImageRenderer from "./HandImageRenderer"
 import HandButtons from "./HandButtons"
-import BaseButton from "./BaseButton"
 
 export type HandSection = "none" | "base" | "middle" | "tip" | "all"
 

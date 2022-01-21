@@ -1,16 +1,20 @@
-import React, { FC } from "react"
+import React from "react"
 
 import { HandSection } from "./HandCard"
 import BaseButton from "./BaseButton"
+import MiddleButton from "./MiddleButton"
+import TipButton from "./TipButton"
 
 interface HandButtonsProps {
   selecting: HandSection
   setSelecting: (section: HandSection) => void
 }
 
-const HandButtons: FC<HandButtonsProps> = ({ selecting, setSelecting }) => {
+const HandButtons: React.FC<HandButtonsProps> = ({
+  selecting,
+  setSelecting,
+}) => {
   const selectSection = (section: HandSection) => {
-    // console.log("pressed! " + section.toString())
     if (selecting !== section) setSelecting(section)
     else setSelecting("none")
   }
@@ -18,15 +22,17 @@ const HandButtons: FC<HandButtonsProps> = ({ selecting, setSelecting }) => {
   return (
     <div>
       <BaseButton onClick={() => selectSection("base")} />
+      <MiddleButton onClick={() => selectSection("middle")} />
+      <TipButton onClick={() => selectSection("tip")} />
       {/* "ปวดทั้งมือ" Button */}
       <button
-        className="button-stomach"
+        className="button-hand"
         style={{
-          top: "65vh",
-          right: "46vw",
+          top: "93%",
+          right: "10%",
           height: "5vh",
           width: "auto",
-          aspectRatio: "19/6",
+          aspectRatio: "8",
         }}
         onClick={() => selectSection("all")}
       />

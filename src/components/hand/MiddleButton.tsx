@@ -1,35 +1,35 @@
 import React from "react"
 
-const BaseButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+const MiddleButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
   return (
     <>
       <button
         className="button-hand"
-        style={{ top: "51%", right: "66%" }}
+        style={{ top: "43%", right: "70%" }}
         onClick={onClick}
       />
       <button
         className="button-hand"
-        style={{ top: "48%", right: "55%" }}
+        style={{ top: "37%", right: "60%" }}
         onClick={onClick}
       />
       <button
         className="button-hand"
-        style={{ top: "47%", right: "46%" }}
+        style={{ top: "34%", right: "48%" }}
         onClick={onClick}
       />
       <button
         className="button-hand"
-        style={{ top: "47%", right: "36%" }}
+        style={{ top: "35%", right: "35%" }}
         onClick={onClick}
       />
       <button
         className="button-hand"
-        style={{ top: "61%", right: "20%" }}
+        style={{ top: "51%", right: "12%" }}
         onClick={onClick}
       />
     </>
   )
 }
 
-export default BaseButton
+export default MiddleButton

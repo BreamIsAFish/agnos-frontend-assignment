@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import HandCard from "../components/hand/HandCard"
 
-const HandQuestionPage: FC = () => {
+const HandQuestionPage: React.FC = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const navigate = useNavigate()
 
