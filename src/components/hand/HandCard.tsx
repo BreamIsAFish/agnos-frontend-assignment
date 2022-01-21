@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 
 import HandImageRenderer from "./HandImageRenderer"
 import HandButtons from "./HandButtons"
@@ -12,10 +12,14 @@ interface HandCardProps {
 const HandCard: React.FC<HandCardProps> = ({ setSelected }) => {
   const [selecting, setSelecting] = useState<HandSection>("none") // Selecting section
 
-  useEffect(() => {
+  const updateSelect = useCallback(() => {
     if (selecting !== "none") setSelected(true)
     else setSelected(false)
-  }, [selecting])
+  }, [selecting, setSelected])
+
+  useEffect(() => {
+    updateSelect()
+  }, [updateSelect])
 
   return (
     <div className="card">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import StomachButtons from "./StomachButtons"
 
 import StomachImageRenderer from "./StomachImageRenderer"
@@ -21,10 +21,14 @@ interface StomachCardProps {
 const StomachCard: React.FC<StomachCardProps> = ({ setSelected }) => {
   const [selecting, setSelecting] = useState<Section>("none") // Selecting section
 
-  useEffect(() => {
+  const updateSelect = useCallback(() => {
     if (selecting !== "none") setSelected(true)
     else setSelected(false)
-  }, [selecting])
+  }, [selecting, setSelected])
+
+  useEffect(() => {
+    updateSelect()
+  }, [updateSelect])
 
   return (
     <div className="card">
