@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import StomachButtons from "./StomachButtons"
 
 import StomachImageRenderer from "./StomachImageRenderer"
@@ -18,18 +18,17 @@ interface StomachCardProps {
   setSelected: (selected: boolean) => void
 }
 
-const StomachCard: FC<StomachCardProps> = ({ setSelected }) => {
+const StomachCard: React.FC<StomachCardProps> = ({ setSelected }) => {
   const [selecting, setSelecting] = useState<Section>("none") // Selecting section
 
   useEffect(() => {
-    // console.log(selecting)
     if (selecting !== "none") setSelected(true)
     else setSelected(false)
   }, [selecting])
 
   return (
     <div className="card">
-      <p className="title">คุณรู้สึกปวดท้องบริเวณใดมากที่สุด ?</p>
+      <p className="title">บริเวณไหนที่คุณปวดท้องมากที่สุด ?</p>
       <StomachImageRenderer selecting={selecting} />
       <StomachButtons selecting={selecting} setSelecting={setSelecting} />
     </div>

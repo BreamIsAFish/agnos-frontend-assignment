@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
 import HandImageRenderer from "./HandImageRenderer"
 import HandButtons from "./HandButtons"
@@ -9,11 +9,10 @@ interface HandCardProps {
   setSelected: (selected: boolean) => void
 }
 
-const HandCard: FC<HandCardProps> = ({ setSelected }) => {
+const HandCard: React.FC<HandCardProps> = ({ setSelected }) => {
   const [selecting, setSelecting] = useState<HandSection>("none") // Selecting section
 
   useEffect(() => {
-    // console.log(selecting)
     if (selecting !== "none") setSelected(true)
     else setSelected(false)
   }, [selecting])

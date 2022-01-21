@@ -1,9 +1,9 @@
-import React, { FC, useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 import StomachCard from "../components/stomach/StomachCard"
 
-const StomachQuestionPage: FC = () => {
+const StomachQuestionPage: React.FC = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const navigate = useNavigate()
 

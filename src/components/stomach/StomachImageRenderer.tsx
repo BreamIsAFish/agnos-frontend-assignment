@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React from "react"
 
 import { Section } from "./StomachCard"
 
@@ -25,7 +25,9 @@ interface StomachImageRendererProp {
   selecting: Section
 }
 
-const StomachImageRenderer: FC<StomachImageRendererProp> = ({ selecting }) => {
+const StomachImageRenderer: React.FC<StomachImageRendererProp> = ({
+  selecting,
+}) => {
   // Match status with the image in the assets folder
   const IMG_DICT: { [section in Section]: string } = {
     none: DEFAULT_ST, // Put this one just to prevent error (We didn't need it)
@@ -40,7 +42,7 @@ const StomachImageRenderer: FC<StomachImageRendererProp> = ({ selecting }) => {
   }
 
   const LABEL_DICT: { [section in Section]: string } = {
-    none: "", // Put this one just to prevent error (We didn't need it)
+    none: "",
     center: CENTER_ST_LABEL,
     top: TOP_ST_LABEL,
     "top-right": TOP_RIGHT_ST_LABEL,
@@ -48,54 +50,42 @@ const StomachImageRenderer: FC<StomachImageRendererProp> = ({ selecting }) => {
     bottom: BOTTOM_ST_LABEL,
     "bottom-left": BOTTOM_LEFT_ST_LABEL,
     "top-left": TOP_LEFT_ST_LABEL,
-    all: "", // Put this one just to prevent error (We didn't need it)
+    all: "",
   }
 
   if (selecting === "none" || !IMG_DICT[selecting]) {
     // Show default image when status is 'default' or status is invalid //
-    return <img className="image-stomach" alt="default" src={DEFAULT_ST} />
+    return <img className="image" alt="default" src={DEFAULT_ST} />
   } else if (selecting === "all") {
     // Highlight all section when user select "ปวดทั้งท้อง"
     return (
       <>
-        <img className="image-stomach" alt="default" src={DEFAULT_ST} />
-        <img className="image-stomach" alt="center" src={IMG_DICT["center"]} />
-        <img className="image-stomach" alt="top" src={IMG_DICT["top"]} />
+        <img className="image" alt="default" src={DEFAULT_ST} />
+        <img className="image" alt="center" src={IMG_DICT["center"]} />
+        <img className="image" alt="top" src={IMG_DICT["top"]} />
+        <img className="image" alt="top-right" src={IMG_DICT["top-right"]} />
         <img
-          className="image-stomach"
-          alt="top-right"
-          src={IMG_DICT["top-right"]}
-        />
-        <img
-          className="image-stomach"
+          className="image"
           alt="bottom-right"
           src={IMG_DICT["bottom-right"]}
         />
-        <img className="image-stomach" alt="bottom" src={IMG_DICT["bottom"]} />
+        <img className="image" alt="bottom" src={IMG_DICT["bottom"]} />
         <img
-          className="image-stomach"
+          className="image"
           alt="bottom-left"
           src={IMG_DICT["bottom-left"]}
         />
-        <img
-          className="image-stomach"
-          alt="top-left"
-          src={IMG_DICT["top-left"]}
-        />
-        <img className="image-stomach" alt="top-left" src={IMG_DICT["all"]} />
+        <img className="image" alt="top-left" src={IMG_DICT["top-left"]} />
+        <img className="image" alt="top-left" src={IMG_DICT["all"]} />
       </>
     )
   } else {
     // Highlight the part according to the selecting section //
     return (
       <>
-        <img className="image-stomach" alt="default" src={DEFAULT_ST} />
-        <img className="image-stomach" alt="select" src={IMG_DICT[selecting]} />
-        <img
-          className="image-stomach"
-          alt="select"
-          src={LABEL_DICT[selecting]}
-        />
+        <img className="image" alt="default" src={DEFAULT_ST} />
+        <img className="image" alt="select" src={IMG_DICT[selecting]} />
+        <img className="image" alt="select" src={LABEL_DICT[selecting]} />
       </>
     )
   }

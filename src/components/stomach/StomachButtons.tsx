@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React from "react"
 
 import { Section } from "./StomachCard"
 
@@ -7,12 +7,11 @@ interface StomachButtonsProps {
   setSelecting: (section: Section) => void
 }
 
-const StomachButtons: FC<StomachButtonsProps> = ({
+const StomachButtons: React.FC<StomachButtonsProps> = ({
   selecting,
   setSelecting,
 }) => {
   const selectSection = (section: Section) => {
-    // console.log("pressed! " + section.toString())
     if (selecting !== section) setSelecting(section)
     else setSelecting("none")
   }
@@ -22,54 +21,54 @@ const StomachButtons: FC<StomachButtonsProps> = ({
       {/* Top Button  */}
       <button
         className="button-stomach"
-        style={{ top: "35vh", right: "49vw" }}
+        style={{ top: "48%", right: "46%" }}
         onClick={() => selectSection("top")}
-      />
-      {/* Bottom-right Button */}
-      <button
-        className="button-stomach"
-        style={{ top: "46vh", right: "46vw" }}
-        onClick={() => selectSection("bottom-right")}
       />
       {/* Top-right Button */}
       <button
         className="button-stomach"
-        style={{ top: "39vh", right: "46vw" }}
+        style={{ top: "54%", right: "36%" }}
         onClick={() => selectSection("top-right")}
+      />
+      {/* Bottom-right Button */}
+      <button
+        className="button-stomach"
+        style={{ top: "63%", right: "36%" }}
+        onClick={() => selectSection("bottom-right")}
       />
       {/* Bottom Button */}
       <button
         className="button-stomach"
-        style={{ top: "49vh", right: "49vw" }}
+        style={{ top: "67%", right: "46%" }}
         onClick={() => selectSection("bottom")}
-      />
-      {/* Top-left Button */}
-      <button
-        className="button-stomach"
-        style={{ top: "39vh", right: "52vw" }}
-        onClick={() => selectSection("top-left")}
       />
       {/* Bottom-left Button */}
       <button
         className="button-stomach"
-        style={{ top: "46vh", right: "52vw" }}
+        style={{ top: "63%", right: "56%" }}
         onClick={() => selectSection("bottom-left")}
+      />
+      {/* Top-left Button */}
+      <button
+        className="button-stomach"
+        style={{ top: "54%", right: "56%" }}
+        onClick={() => selectSection("top-left")}
       />
       {/* Center Button */}
       <button
         className="button-stomach"
-        style={{ top: "42vh", right: "49vw" }}
+        style={{ top: "58%", right: "46%" }}
         onClick={() => selectSection("center")}
       />
       {/* "ปวดทั้งท้อง" Button */}
       <button
         className="button-stomach"
         style={{
-          top: "65vh",
-          right: "46vw",
+          top: "91%",
+          right: "38%",
           height: "5vh",
           width: "auto",
-          aspectRatio: "19/6",
+          aspectRatio: "3",
         }}
         onClick={() => selectSection("all")}
       />
